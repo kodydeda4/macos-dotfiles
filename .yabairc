@@ -1,0 +1,97 @@
+#
+#
+#   ██╗   ██╗ █████╗ ██████╗  █████╗ ██╗
+#   ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗██║
+#    ╚████╔╝ ███████║██████╔╝███████║██║
+#     ╚██╔╝  ██╔══██║██╔══██╗██╔══██║██║
+#      ██║   ██║  ██║██████╔╝██║  ██║██║
+#      ╚═╝   ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═╝
+#
+#   ~/.yabairc
+#   
+#
+
+#============================================
+# Debug
+#============================================
+yabai -m config debug_output off
+
+#============================================
+# Space
+#============================================
+# Layout
+yabai -m config layout float
+
+# Padding
+yabai -m config top_padding 30
+yabai -m config bottom_padding 30
+yabai -m config left_padding 30
+yabai -m config right_padding 30
+yabai -m config window_gap 30
+
+#============================================
+# Window
+#============================================
+# Shadows
+yabai -m config window_shadow on
+
+# Opacity Effects
+yabai -m config window_opacity off
+yabai -m config window_opacity_duration 1.0
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 1.0
+
+# Borders
+yabai -m config window_border off
+yabai -m config window_border_width 0
+yabai -m config active_window_border_color "0xff28cd41"
+yabai -m config normal_window_border_color "0xff8e8e93"
+
+# New Window Placement
+yabai -m config window_placement second_child
+
+# Auto Balance
+yabai -m config auto_balance off
+
+# Split Ratio
+yabai -m config split_ratio 0.5
+
+# Floating Windows Stay-On-Top
+yabai -m config window_topmost off
+
+#============================================
+# Mouse
+#============================================
+# Mouse Follows Focus
+yabai -m config mouse_follows_focus off
+
+# Focus Follows Mouse
+yabai -m config focus_follows_mouse off
+
+# Modifier Key
+yabai -m config mouse_modifier fn
+
+# Left Click + Modifier
+yabai -m config mouse_action1 move
+
+# Right Click + Modifier
+yabai -m config mouse_action2 resize
+
+# Drop Action
+yabai -m config mouse_drop_action swap
+
+#============================================
+# External Bar
+#============================================
+# External Bar top:bottom
+yabai -m config external_bar off
+
+#============================================
+# Misc
+#============================================
+# Set-System Preferences Floating
+yabai -m rule --add label="System Preferences" app="^System Preferences$" manage=off"
+
+# Load Scripting Addition
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
