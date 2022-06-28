@@ -23,11 +23,11 @@ yabai -m config debug_output off
 yabai -m config layout float
 
 # Padding
-yabai -m config top_padding 30
-yabai -m config bottom_padding 30
-yabai -m config left_padding 30
-yabai -m config right_padding 30
-yabai -m config window_gap 30
+yabai -m config top_padding 20
+yabai -m config bottom_padding 20
+yabai -m config left_padding 20
+yabai -m config right_padding 20
+yabai -m config window_gap 20
 
 #============================================
 # Window
@@ -90,8 +90,7 @@ yabai -m config external_bar off
 # Misc
 #============================================
 # Set-System Preferences Floating
-yabai -m rule --add label="System Preferences" app="^System Preferences$" manage=off"
-
-# Load Scripting Addition
-sudo yabai --load-sa
-yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+yabai -m rule --add label="System Preferences" app="^System Preferences$" manage=off
+yabai -m rule --add label="Calculator" app="^Calculator$" manage=off
+yabai -m rule --add label="Simulator" app="^Simulator$" manage=off
+yabai -m rule --add label="GitHub Desktop" app="^GitHub Desktop$" manage=off
